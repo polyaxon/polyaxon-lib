@@ -5,7 +5,7 @@ from polyaxon_schemas.losses import HuberLossConfig
 from polyaxon_schemas.optimizers import SGDConfig
 from polyaxon_schemas.rl.explorations import DecayExplorationConfig
 
-import polyaxon as plx
+import polyaxon_lib as plx
 import tensorflow as tf
 
 

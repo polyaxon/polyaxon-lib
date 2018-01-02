@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
-from polyaxon.polyaxonfile import local_runner
+from polyaxon_lib.polyaxonfile import local_runner
 
 
 if __name__ == "__main__":

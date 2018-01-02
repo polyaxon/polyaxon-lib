@@ -2,13 +2,13 @@
 from __future__ import absolute_import, division, print_function
 
 import tensorflow as tf
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from polyaxon_schemas.losses import SigmoidCrossEntropyConfig
 from polyaxon_schemas.metrics import AccuracyConfig
 from polyaxon_schemas.optimizers import AdamConfig
 
-from polyaxon.regularizations import l2
+from polyaxon_lib.regularizations import l2
 
 
 def graph_fn(mode, features):

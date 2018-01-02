@@ -5,7 +5,7 @@ import numpy as np
 
 from tensorflow.python.platform import test
 
-from polyaxon.rl.utils import get_cumulative_rewards
+from polyaxon_lib.rl.utils import get_cumulative_rewards
 
 
 class TestCumulativeRewards(test.TestCase):

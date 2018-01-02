@@ -2,7 +2,7 @@
 from __future__ import absolute_import, division, print_function
 
 import tensorflow as tf
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from polyaxon_schemas.losses import SigmoidCrossEntropyConfig
 from polyaxon_schemas.metrics import AccuracyConfig

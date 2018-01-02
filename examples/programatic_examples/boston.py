@@ -6,7 +6,7 @@ import numpy as np
 from polyaxon_schemas.optimizers import SGDConfig
 
 
-import polyaxon as plx
+import polyaxon_lib as plx
 import tensorflow as tf
 
 from polyaxon_schemas.losses import MeanSquaredErrorConfig

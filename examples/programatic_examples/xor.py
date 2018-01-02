@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function
 
 import numpy as np
 import tensorflow as tf
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from tensorflow.python.estimator.inputs.numpy_io import numpy_input_fn
 

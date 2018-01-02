@@ -5,14 +5,14 @@ import tensorflow as tf
 from polyaxon_schemas.losses import LogLossConfig
 from polyaxon_schemas.optimizers import AdadeltaConfig
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from tensorflow.python.training import training
 from tensorflow.python.platform import test
 
-from polyaxon.estimators.estimator_spec import EstimatorSpec
-from polyaxon.models import BaseModel
-from polyaxon.libs.utils import get_tracked
+from polyaxon_lib.estimators.estimator_spec import EstimatorSpec
+from polyaxon_lib.models import BaseModel
+from polyaxon_lib.libs.utils import get_tracked
 
 
 class TestBaseModel(test.TestCase):

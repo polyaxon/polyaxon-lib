@@ -380,11 +380,11 @@ eval:
 
 # Installation
 
-To install the latest version of Polyaxon: `pip install polyaxon`
+To install the latest version of Polyaxon: `pip install polyaxon_lib`
 
 Alternatively, you can also install from source by running (from source folder): `python setup.py install`
 
-Or you can just clone the repo `git clone https://github.com/polyaxon/polyaxon.git`, and use the commands to do everything in docker:
+Or you can just clone the repo `git clone https://github.com/polyaxon_lib/polyaxon_lib.git`, and use the commands to do everything in docker:
  
  * `cmd/rebuild` to build the docker containers.
  * `cmd/py` to start a python3 shell with all requirements installed.

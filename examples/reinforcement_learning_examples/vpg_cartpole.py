@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 
-import polyaxon as plx
+import polyaxon_lib as plx
 import tensorflow as tf
 
 

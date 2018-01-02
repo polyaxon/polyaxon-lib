@@ -10,7 +10,7 @@ try:
 except ImportError:
     pass
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from polyaxon_schemas.losses import MeanSquaredErrorConfig
 from polyaxon_schemas.metrics import (

@@ -3,14 +3,14 @@ from __future__ import absolute_import, division, print_function
 
 import numpy as np
 import tensorflow as tf
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from tensorflow.examples.tutorials.mnist import input_data
 
 from polyaxon_schemas.optimizers import AdamConfig
 from polyaxon_schemas.losses import MeanSquaredErrorConfig
 
-from polyaxon.libs.utils import total_tensor_depth
+from polyaxon_lib.libs.utils import total_tensor_depth
 
 
 def encoder_fn(mode, features):

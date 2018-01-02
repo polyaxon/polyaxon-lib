@@ -5,7 +5,7 @@ import numpy as np
 import tensorflow as tf
 from polyaxon_schemas.settings import RunConfig, ClusterConfig
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from polyaxon_schemas.losses import AbsoluteDifferenceConfig
 from polyaxon_schemas.optimizers import SGDConfig

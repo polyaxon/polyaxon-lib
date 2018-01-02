@@ -16,8 +16,8 @@ from tensorflow.python.ops import image_ops
 from tensorflow.python.platform import gfile
 from tensorflow.python.platform import test
 
-from polyaxon.processing.data_decoders import TFExampleDecoder
-from polyaxon.processing.data_providers import Dataset, DatasetDataProvider
+from polyaxon_lib.processing.data_decoders import TFExampleDecoder
+from polyaxon_lib.processing.data_providers import Dataset, DatasetDataProvider
 
 
 def _resize_image(image, height, width):

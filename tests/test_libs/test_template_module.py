@@ -4,7 +4,7 @@ from __future__ import absolute_import, division, print_function
 import functools
 
 import tensorflow as tf
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from tensorflow.python.ops.template import Template
 from tensorflow.python.platform import test

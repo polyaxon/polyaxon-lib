@@ -18,7 +18,7 @@ from tensorflow.python.ops import math_ops
 from tensorflow.python.ops import parsing_ops
 from tensorflow.python.platform import test
 
-from polyaxon.processing.data_decoders import TFExampleDecoder
+from polyaxon_lib.processing.data_decoders import TFExampleDecoder
 
 
 class TFExampleDecoderTest(test.TestCase):

@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function
 
 import tensorflow as tf
 
-from polyaxon.libs.decorators import tf_template
+from polyaxon_lib.libs.decorators import tf_template
 
 
 class TestTfTemplate(tf.test.TestCase):
