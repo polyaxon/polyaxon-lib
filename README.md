@@ -1,15 +1,15 @@
-[![Build Status](https://travis-ci.org/polyaxon/polyaxon.svg?branch=master)](https://travis-ci.org/polyaxon/polyaxon)
-[![PyPI version](https://badge.fury.io/py/polyaxon.svg)](https://badge.fury.io/py/polyaxon)
+[![Build Status](https://travis-ci.org/polyaxon/polyaxon-lib.svg?branch=master)](https://travis-ci.org/polyaxon/polyaxon-lib)
+[![PyPI version](https://badge.fury.io/py/polyaxon.svg)](https://badge.fury.io/py/polyaxon-lib)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENCE)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/polyaxon/polyaxon)
 
-# Polyaxon
+# Polyaxon-Lib
 
 Deep Learning and Reinforcement learning library for TensorFlow for building end to end models and experiments.
 
 # Design Goals
 
-Polyaxon was built with the following goals:
+Polyaxon-Lib was built with the following goals:
 
  * Modularity: The creation of a computation graph based on modular and understandable modules,
     with the possibility to reuse and share the module in subsequent usage.
@@ -33,7 +33,7 @@ Polyaxon was built with the following goals:
 from polyaxon_schemas.losses import MeanSquaredErrorConfig
 from polyaxon_schemas.optimizers import SGDConfig
 
-import polyaxon as plx 
+import polyaxon_lib as plx
 
 X = np.linspace(-1, 1, 100)
 y = 2 * X + np.random.randn(*X.shape) * 0.33
@@ -72,7 +72,7 @@ from polyaxon_schemas.losses import HuberLossConfig
 from polyaxon_schemas.optimizers import SGDConfig
 from polyaxon_schemas.rl.explorations import DecayExplorationConfig
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
 env = plx.envs.GymEnvironment('CartPole-v0')
 
@@ -104,7 +104,7 @@ agent.train(env)
 
 ```python
 import tensorflow as tf
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from polyaxon_schemas.optimizers import AdamConfig
 from polyaxon_schemas.losses import SigmoidCrossEntropyConfig
@@ -176,7 +176,7 @@ from polyaxon_schemas.metrics import (
 )
 from polyaxon_schemas.optimizers import AdagradConfig
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
 NUM_RNN_LAYERS = 2
 NUM_RNN_UNITS = 2
@@ -218,7 +218,7 @@ import numpy as np
 import tensorflow as tf
 from polyaxon_schemas.settings import RunConfig, ClusterConfig
 
-import polyaxon as plx
+import polyaxon_lib as plx
 
 from polyaxon_schemas.losses import AbsoluteDifferenceConfig
 from polyaxon_schemas.optimizers import SGDConfig
@@ -380,11 +380,11 @@ eval:
 
 # Installation
 
-To install the latest version of Polyaxon: `pip install polyaxon_lib`
+To install the latest version of Polyaxon: `pip install polyaxon-lib`
 
 Alternatively, you can also install from source by running (from source folder): `python setup.py install`
 
-Or you can just clone the repo `git clone https://github.com/polyaxon_lib/polyaxon_lib.git`, and use the commands to do everything in docker:
+Or you can just clone the repo `git clone https://github.com/polyaxon/polyaxon-lib.git`, and use the commands to do everything in docker:
  
  * `cmd/rebuild` to build the docker containers.
  * `cmd/py` to start a python3 shell with all requirements installed.
