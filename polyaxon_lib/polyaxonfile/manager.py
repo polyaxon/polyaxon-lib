@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 
-import os
 import tensorflow as tf
 
 from polyaxon_schemas.eval import EvalConfig
@@ -10,11 +9,12 @@ from polyaxon_schemas.settings import ClusterConfig
 from polyaxon_schemas.train import TrainConfig
 from polyaxon_schemas.utils import TaskType
 
+from polyaxon_helper import get_cluster_def, get_log_level, get_outputs_path
+
 from polyaxon_lib.experiments import Experiment
 from polyaxon_lib import Modes, getters
 from polyaxon_lib.estimators.run_config import RunConfig
 from polyaxon_lib.processing.input_data import create_input_data_fn
-from polyaxon_lib.polyaxonfile import constants
 
 LOGGING_LEVEL = {
     'INFO': tf.logging.INFO,
@@ -69,17 +69,7 @@ def _get_run_configs(spec_config, experiment_idx):
         config.cluster = spec.get_local_cluster()
     else:
         # Get value from env
-        master = os.getenv(constants.CLUSTER_CONFIG_MAP_KEY_NAME.format(
-            task_type=TaskType.MASTER), '')
-        worker = os.getenv(constants.CLUSTER_CONFIG_MAP_KEY_NAME.format(
-            task_type=TaskType.WORKER), '')
-        ps = os.getenv(constants.CLUSTER_CONFIG_MAP_KEY_NAME.format(
-            task_type=TaskType.PS), '')
-        cluster_dict = {
-            TaskType.MASTER: master.split(','),
-            TaskType.WORKER: worker.split(','),
-            TaskType.PS: ps.split(',')
-        }
+        cluster_dict = get_cluster_def()
         config.cluster = ClusterConfig.from_dict(cluster_dict)
 
     configs = {TaskType.MASTER: [get_master_config(config, TaskType.MASTER, 0)]}
@@ -125,12 +115,20 @@ def prepare_experiment_run(spec_config, experiment_idx, task_type=TaskType.MASTE
                          'the specification file passed.'.format(task_type, task_id))
 
     env = spec.environment
+
+    if spec.is_local:
+        output_dir = spec.project_path
+        log_level = LOGGING_LEVEL[spec.settings.logging.level]
+    else:
+        output_dir = get_outputs_path()
+        log_level = get_log_level()
+
     if not env:
         tf.logging.set_verbosity(tf.logging.INFO)
         configs = {TaskType.MASTER: [RunConfig()]}
         delay_workers_by_global_step = False
     else:
-        tf.logging.set_verbosity(LOGGING_LEVEL[spec.settings.logging.level])
+        tf.logging.set_verbosity(log_level)
         configs, _ = _get_run_configs(spec, experiment_idx)
         delay_workers_by_global_step = env.delay_workers_by_global_step
 
@@ -140,7 +138,7 @@ def prepare_experiment_run(spec_config, experiment_idx, task_type=TaskType.MASTE
 
     estimator = getters.get_estimator(spec.model,
                                       configs[task_type][task_id],
-                                      output_dir=spec.project_path)
+                                      output_dir=output_dir)
 
     return Experiment(
         estimator=estimator,
