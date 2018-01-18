@@ -18,14 +18,14 @@ class PyTest(TestCommand):
 
 
 setup(name='polyaxon-lib',
-      version='0.0.1',
+      version='0.0.2',
       description='Deep Learning library for TensorFlow for '
                   'building end to end models and experiments.',
       maintainer='Mourad Mourafiq',
       maintainer_email='mouradmourafiq@gmail.com',
       author='Mourad Mourafiq',
       author_email='mouradmourafiq@gmail.com',
-      url='https://github.com/polyaxon/polyaxon',
+      url='https://github.com/polyaxon/polyaxon-lib',
       license='MIT',
       platforms='any',
       packages=find_packages(),
@@ -44,7 +44,8 @@ setup(name='polyaxon-lib',
       install_requires=[
           'numpy==1.13.1',
           'Pillow==4.2.1',
-          'polyaxon-schemas==0.0.15',
+          'polyaxon-schemas==0.0.2',
+          'polyaxon-helper==0.0.2',
           'six==1.11.0',
           'tensorflow>=1.3.0',
       ],
