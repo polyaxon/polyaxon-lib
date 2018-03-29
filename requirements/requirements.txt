@@ -1,0 +1,4 @@
+-r requirements-base.txt
+
+polyaxon-schemas==0.0.5
+polyaxon-helper==0.0.5
